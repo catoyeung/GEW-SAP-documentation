@@ -1,11 +1,75 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html lang="zh-CN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 	<head>
 		<title>search panel</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link href="styles/reset.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+		<link href="styles/panel.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+		<link href="styles/jquery.treeview.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="js/jquery-treeview/jquery.treeview.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			//Add the value of "搜尋..." to the search box
+			$("#search_box").val("搜尋...");
+			//When you click on the search box, clear the search tag
+			$("#search_box").focus(function(){
+				if($(this).val() == "搜尋..."){
+					$(this).val("");
+				}
+			});
+			//When the focus on the search box lost, add back the search tag
+			$("#search_box").blur(function(){
+				if($(this).val() == ""){
+					$(this).val("搜尋...");
+				}
+			});
+			function lookup(inputString){
+				if(inputString.length == 0){
+					$("#suggestion").fadeOut();
+				} else {
+					$("#suggestion").fadeIn();
+					$("#suggestion").load('suggestion.html');
+				}
+			}
+			$("#menu").treeview();
+		});
+		</script>
 	</head>
 	<body>
-		This is panel
+		<div id="header">
+			<form id="search_form">
+				<fieldset>
+					<input id="search_box" type="text" size="30" value="Search" onkeyup="lookup(this.value)"/>
+				</fieldset>
+				<div id="suggestion">Hello</div>
+			</form>
+		</div>
+		<div id="tree">
+			<ul id="menu" class="filetree">
+				<li class="closed"><span class="folder">PUR</span>
+					<ul>
+						<li><span class="file">Item 1.1</span></li>
+					</ul>
+				</li>
+				<li class="closed"><span class="folder">PMC</span>
+					<ul>
+						<li class="closed"><span class="folder">PR</span>
+							<ul>
+								<li><span class="file">How to create a PR</span></li>
+								<li><span class="file">How to modify a PR</span></li>
+							</ul>
+						</li>
+						<li><span class="file">How to create a PO</span></li>
+					</ul>
+				</li>
+				<li class="closed"><span class="folder">ACC</span>
+					<ul>
+						<li><span class="file">How to create an Invoice</span></li>
+					</ul>
+				</li>
+				<li><span class="file">Introduction to SAP documentation</span></li>
+			</ul>
+		</div>
 	</body>
 </html>
