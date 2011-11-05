@@ -2,6 +2,17 @@ body {
 	font-size: 0.875em;
 }
 
+#search_box_div {
+	border: 1px solid #999;
+}
+
 #search_box {
+	display: block;
 	width: 100%;
+	padding: 0;
+	border-width: 0;
+}
+
+#search_box:focus {
+	outline: none;
 }
