@@ -1,26 +1,50 @@
 h1 {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-bottom: 0.25em;
 	font-weight: bold;
-	font-family: Georgia, Times New Roman;
 }
 
 h2 {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-bottom: 0.5em;
 	border-bottom: 1px solid #000;
-	font-family: Georgia, Times New Roman;
+	font-weight: bold;
 }
 
 h3 {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-bottom: 0.5em;
 	font-weight: bold;
-	font-family: Georgia, Times New Roman;
+}
+
+h4 {
+	font-size: 1em;
+	margin-bottom: 0.25em;
+	text-decoration: underline;
 }
 
 p {
 	margin-bottom: 1em;
+	line-height: 1.25em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+ol {
+	margin-left: 1.5em;
+	margin-bottom: 1em;
+}
+
+ol li {
+	list-style-type: decimal;
+	margin-bottom: 0.125em;
+}
+
+img {
+	border: 1px solid #999;
+	margin: 0.5em;
 }
 
 #header {
@@ -62,6 +86,6 @@ p {
 	margin-bottom: 1em;
 }
 
-.info p, .notice p, .error p {
-	margin: 0;
+.list-desc {
+	margin-bottom: 0.25em;
 }

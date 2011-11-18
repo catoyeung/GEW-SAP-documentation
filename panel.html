@@ -27,12 +27,27 @@
 			});
 			
 			$("#menu").treeview();
+			
+			$("#search_box").marcoPolo({
+				data: {
+					apikey: 'api_test-W1cipwpcdu9Cbd9pmm8D4Cjc469',
+				},
+				formatData: function (data) {
+					return data.results.slice(0, 10);
+				},
+				formatItem: function (data, $item) {
+					return data.screen_name;
+				},
+				onSelect: function (data, $item) {
+					this.val(data.screen_name);
+				}
+			});
 		});
 		</script>
 	</head>
 	<body>
 		<div id="header">
-			<form id="search_form">
+			<form id="search_form" method="get" action="http://api.infochimps.com/social/network/tw/search/people_search">
 				<fieldset>
 					<div id="search_box_div">
 						<input id="search_box" type="text" size="30" value="Search"/>
@@ -44,26 +59,33 @@
 			<ul id="menu" class="filetree">
 				<li class="closed"><span class="folder">PUR</span>
 					<ul>
-						<li><span class="file">Item 1.1</span></li>
+						<li><span class="file"><p>Item 1.1</p></span></li>
 					</ul>
 				</li>
 				<li class="closed"><span class="folder">PMC</span>
 					<ul>
 						<li class="closed"><span class="folder">PR</span>
 							<ul>
-								<li><span class="file">How to create a PR</span></li>
-								<li><span class="file">How to modify a PR</span></li>
+								<li><span class="file">
+									<a href="doc/how-to-create-purchase-requisition.html" target="doc"><p>How to create a PR?</p></a>
+								</span></li>
+								<li><span class="file"><p>How to modify a PR?</p></span></li>
 							</ul>
 						</li>
-						<li><span class="file">How to create a PO</span></li>
+						<li><span class="file"><p>How to create a PO?</p></span></li>
 					</ul>
 				</li>
 				<li class="closed"><span class="folder">ACC</span>
 					<ul>
-						<li><span class="file">How to create an Invoice</span></li>
+						<li><span class="file">
+							<a href="doc/how-to-create-a-purchase-info-record.html" target="doc"><p>How to create a Purchase Info Record?如何輸入單價?</p></a>
+						</span></li>
+						<li><span class="file">
+							<a href="doc/how-to-modify-a-purchase-info-record.html" target="doc"><p>How to modify a Purchase Info Record?如何更改單價?</p></a>
+						</span></li>
 					</ul>
 				</li>
-				<li><span class="file">Introduction to SAP documentation</span></li>
+				<li><span class="file"><p>Introduction to SAP documentation</p></span></li>
 			</ul>
 		</div>
 	</body>

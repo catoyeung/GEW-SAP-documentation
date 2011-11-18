@@ -2,6 +2,19 @@ body {
 	font-size: 0.875em;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
 #search_box_div {
 	border: 1px solid #999;
 }
@@ -9,10 +22,56 @@ body {
 #search_box {
 	display: block;
 	width: 100%;
-	padding: 0;
+	padding: 5px 0;
 	border-width: 0;
 }
 
 #search_box:focus {
 	outline: none;
+}
+
+/* Start of MarcoPolo. */
+
+ol.mp_list {
+	background-color: #FFFFFF;
+	border-top: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	border-right: 1px solid #C0C0C0;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin-left: -1px;
+	z-index: 99999;
+}
+
+/* Each list item, regardless of success, error, etc. */
+ol.mp_list li {
+	border-bottom: 1px solid #C0C0C0;
+	padding: 4px 4px 5px;
+}
+
+/* Each list item from a successful request. */
+ol.mp_list li.mp_item {
+
+}
+
+/* Each list item that's selectable. */
+ol.mp_list li.mp_selectable {
+	cursor: pointer;
+}
+
+/* Currently highlighted list item. */
+ol.mp_list li.mp_highlighted {
+	background-color: #E0E0E0;
+}
+
+/* End of MarcoPolo. */
+
+#tree li {
+	cursor: pointer;
+}
+
+#tree .file p:hover {
+	color: #C52F24;
+	background: #EEE;
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+	<head>
+		<title>How to create a Purchase Info Record?如何更改單價?</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="../styles/reset.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+		<link href="../styles/doc.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+	</head>
+	<body>
+		<div id="header">
+			<h1>How to create a Purchase Info Record?如何更改單價?</h1>
+			<span class="log">Last modified by Cato Yeung 17Oct2011</span>
+		</div>
+		<div id="content">
+			<h2>引言</h2>
+			<p>如果你想更改單價，就必須維護購買資訊記錄 (Purchase Info Record)，購買資訊記錄記載以下資料：單價、最少購買數量、購買單位等等資料。以下3項都是維護購買資訊記錄的T-Code：</p>
+			<ol>
+				<li>ME11 – 建立購買資訊記錄</li>
+				<li>ME12 – 更改購買資訊記錄</li>
+				<li>ME13 – 顯示購買資訊記錄</li>
+			</ol>
+			<p>本文將會講述如何<strong>更改購買資訊記錄</strong>。舉一個例子，供應商CV004對物料00-0211更新價格，此項物料以一包100公斤為包裝，2011年11月18日前1000包價錢值$500 HKD，在公廠1000購買，現在需要為此物料更新價格，新價格為1000包$750 HKD。</p>
+			<h2>前提</h2>
+			<p class="list-desc">更改單價前你必須確定已完成以下步驟：</p>
+			<ol>
+				<li>建立購買資訊記錄</li>
+			</ol>
+			<h2>更改購買資訊記錄</h2>
+			<img src="../img/doc/2/1.bmp"/>
+			<p class="list-desc">輸入以下資料：</p>
+			<ol>
+				<li>供應商，例如CV004</li>
+				<li>物料，例如00-0211</li>
+				<li>採購組織，例如1000</li>
+				<li>工廠，例如1000</li>
+				<li>資訊種類，請選擇標準(Standard)、分包/外發加工(Subcontract)或託售(Consignment)</li>
+			</ol>
+			<img src="../img/doc/2/2.bmp"/>
+			<p>按”採購機構資料”。</p>
+			<img src="../img/doc/2/3.bmp"/>
+			<p>按”條件”。</p>
+			<img src="../img/doc/2/4.bmp"/>
+			<p>按”新的有效期”。</p>
+			<img src="../img/doc/2/5.bmp"/>
+			<p>注意：新的購買資訊記錄有效期為2011年11月18日。</p>
+			<p class="list-desc">輸入以下資料：</p>
+			<ol>
+				<li>淨價，必須列明數量及價錢，數量必需為1000，如每1000包 $750 HKD ，價錢便輸入$750 HKD</li>
+			</ol>
+			<p>按“儲存”完成操作。</p>
+			<div class="notice">
+				<h3>提示</h3>
+				<h4>新的購買資訊記錄有效期</h4>
+				<p>新的購買資訊記錄有效期為2011年11月18日，代表所有由該日或該日後開出的訂單才會以新價格買入。</p>
+			</div>
+			<div class="error">
+				<h3>錯誤</h3>
+				<h4>供應商X和物料Y的資訊記錄不存在</h4>
+				<img src="../img/doc/2/error1.bmp"/>
+				<p>請確認已<a href="how-to-create-a-purchase-info-record.html" target="doc">建立購買資訊記錄</a></p>
+			</div>
+			<div class="info">
+				<h3>資訊</h3>
+				<p>不同工廠(1000, 3300)、不同供應商(CA002, CV004)、不同物料都有它們自己的購買資訊記錄。</p>
+			</div>
+		</div>
+	</body>
+</html>
